@@ -1,0 +1,21 @@
+{
+  "name": "docker-sense-go",
+  "version": "0.0.1",
+  "description": "Docker image to run sense-go.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "d-build": "docker build -t stefanwalther/sense-go .",
+    "d-run": "docker run -v '/Users/swr/git/stefanwalther/docker-verb/test/fixtures:/workspace' -t -it stefanwalther/sense-go /bin/bash"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stefanwalther/docker-sense-go"
+  },
+  "author": "Stefan Walther <swr.nixda@gmail.com> (http://qliksite.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stefanwalther/docker-sense-go/issues"
+  },
+  "homepage": "https://github.com/stefanwalther/docker-sense-go#readme"
+}
