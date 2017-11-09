@@ -11,7 +11,7 @@
 ## Run
 
 ```sh
-$ docker run --rm -v ${PWD}:/opt/verb stefanwalther/sense-go
+$ docker run --rm -v ${PWD}:/opt/sense-go stefanwalther/sense-go sense-go build
 ```
 
 ## Author

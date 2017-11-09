@@ -6,7 +6,8 @@ gen-readme:
 	docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb
 
 run:
-	docker run --rm -v ${PWD}:/opt/verb stefanwalther/sense-go build
+	docker run --rm -v ${PWD}:/opt/sense-go stefanwalther/sense-go sense-go build
 
 cci-local:
-	circleci build
+	echo $DOCKER_USER
+	circleci build -e DOCKER_USER="stefanwalther" -e DOCKER_PASS=$(DOCKER_PASS)
