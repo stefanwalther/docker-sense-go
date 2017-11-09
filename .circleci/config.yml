@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:8.6.0
+    working_directory: ~/app
+    environment:
+      DOCKER_REPO: stefanwalther/sense-go
+      VER: latest
+    steps:
+      - checkout
+      - add_ssh_keys
+      - setup_remote_docker:
+          version: 17.07.0-ce
+      - run:
+          name: Install Docker client
+          command: ./scripts/cci2-install-docker-client.sh "17.07.0-ce" "edge"
+      - run:
+          name: Build Docker image (including tests)
+          command: |
+            echo Building image "$DOCKER_REPO":"$VER"
+            docker build -t $DOCKER_REPO:$VER .
+      - run:
+          name: Tag image
+          command: |
+            # Only branch "master" is being marked as latest
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker tag $DOCKER_REPO:$VER $DOCKER_REPO:latest
+            fi
+      - run:
+          name: Login to Docker
+          command: docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
+      - deploy:
+          name: Push image to Docker Hub
+          command: |
+            # Do not push branches to Docker Hub
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              echo Pushing image to docker "$DOCKER_REPO":"$VER"
+              docker push $DOCKER_REPO
+            fi
