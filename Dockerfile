@@ -30,4 +30,6 @@ RUN ln -s /usr/local/lib/node_modules/sense-go/bin/cli.js /usr/local/bin/sense-g
 # Copy the global packages previously being installed
 COPY --from=BASE /usr/local/lib/node_modules /usr/local/lib/node_modules
 
-CMD ["sense-go"]
+COPY ./docker-entrypoint.sh /
+
+ENTRYPOINT ["./docker-entrypoint.sh"]
