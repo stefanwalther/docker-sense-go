@@ -22,7 +22,6 @@ WORKDIR /opt/sense-go
 
 # OK, here we have to copy the symbolic link
 # use npm config get prefix to get the node.js prefix https://stackoverflow.com/questions/18383476/how-to-get-the-npm-global-path-prefix
-# COPY --from=BASE /usr/local/bin/verb /usr/local/bin/verb
 
 # Create the symbolic link
 RUN ln -s /usr/local/lib/node_modules/sense-go/bin/cli.js /usr/local/bin/sense-go
