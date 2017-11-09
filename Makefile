@@ -1,5 +1,5 @@
 
-.PHONY: help
+.PHONY: help test d-build gen-readme cci-local
 
 help: ## Call the help
 	@echo ''
@@ -9,7 +9,7 @@ help: ## Call the help
 
 
 d-build: ## Build the container
-	docker build --force-rm -t stefanwalther/sense-go .
+	docker build --no-cache --force-rm -t stefanwalther/sense-go .
 
 gen-readme: ## Generate the README.md (using docker-verb)
 	docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb
@@ -20,3 +20,6 @@ run: ## Run sense-go locally (for testing purposes)
 cci-local: ## Run CircleCI-2 locally
 	echo $DOCKER_USER
 	circleci build -e DOCKER_USER="stefanwalther" -e DOCKER_PASS=$(DOCKER_PASS)
+
+test:
+	@./test/test.sh

@@ -21,6 +21,10 @@ jobs:
             echo Building image "$DOCKER_REPO":"$VER"
             docker build -t $DOCKER_REPO:$VER .
       - run:
+          name: Run tests
+          command: |
+            ./test/test.sh
+      - run:
           name: Tag image
           command: |
             # Only branch "master" is being marked as latest

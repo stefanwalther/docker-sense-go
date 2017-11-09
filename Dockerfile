@@ -31,4 +31,4 @@ COPY --from=BASE /usr/local/lib/node_modules /usr/local/lib/node_modules
 
 COPY ./docker-entrypoint.sh /
 
-ENTRYPOINT ["./docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
