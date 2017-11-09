@@ -7,7 +7,13 @@
 ## Run
 
 ```sh
-$ docker run --rm -v ${PWD}:/opt/sense-go stefanwalther/sense-go sense-go build
+$ docker run --rm -v ${PWD}:/opt/sense-go stefanwalther/sense-go <PARAMS>
+```
+
+To execute the `build` task, use:
+
+```sh
+$ docker run --rm -v ${PWD}:/opt/sense-go stefanwalther/sense-go build
 ```
 
 ## Author
