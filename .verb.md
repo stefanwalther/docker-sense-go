@@ -4,6 +4,12 @@
 
 ---
 
+## Install
+
+```sh
+$ docker pull stefanwalther/sense-go
+```
+
 ## Run
 
 ```sh
