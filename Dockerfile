@@ -8,7 +8,7 @@ MAINTAINER Stefan Walther <swr-nixda@gmail.com>
 
 WORKDIR /opt/sense-go
 
-RUN npm install stefanwalther/sense-go -g
+RUN npm install sense-go@0.13.7 -g
 
 ## -------------------------------------------------------------------
 ##                                RELEASE
