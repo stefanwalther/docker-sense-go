@@ -4,10 +4,6 @@
 
 ---
 
-## Installation
-
-... install instructions here ...
-
 ## Run
 
 ```sh
