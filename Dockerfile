@@ -6,9 +6,11 @@
 FROM node:8.6.0 as BASE
 MAINTAINER Stefan Walther <swr-nixda@gmail.com>
 
+ARG SENSE_GO_VERSION="0.14.1"
+
 WORKDIR /opt/sense-go
 
-RUN npm install sense-go@0.13.7 -g
+RUN npm install sense-go@$SENSE_GO_VERSION -g
 
 ## -------------------------------------------------------------------
 ##                                RELEASE
