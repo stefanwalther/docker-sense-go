@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/stefanwalther/docker-sense-go/issues"
   },
-  "homepage": "https://github.com/stefanwalther/docker-sense-go#readme"
+  "homepage": "https://github.com/stefanwalther/docker-sense-go#readme",
+  "devDependencies": {
+    "sense-go": "^0.14.1"
+  }
 }

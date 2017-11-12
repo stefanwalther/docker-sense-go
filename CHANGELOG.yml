@@ -3,6 +3,7 @@ v0.14.1:
   changes:
     - "Update to sense-go v0.14.1"
     - "Sync the version of docker-sense-go with the version of sense-go"
+    - "Add sense-go as local dev packages, just to get the greenkeeper.io notifications"
 v0.1.0:
   date: "2017-11-09"
   changes:
