@@ -1,3 +1,6 @@
 .idea
 .vscode
 build
+
+node_modules
+test/fixtures/basic/.tmp
