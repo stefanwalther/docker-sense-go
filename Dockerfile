@@ -6,7 +6,7 @@
 FROM node:8.6.0 as BASE
 MAINTAINER Stefan Walther <swr-nixda@gmail.com>
 
-ARG SENSE_GO_VERSION="0.14.1"
+ARG SENSE_GO_VERSION="0.14.2"
 
 WORKDIR /opt/sense-go
 
