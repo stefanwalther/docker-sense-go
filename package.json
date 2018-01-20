@@ -1,6 +1,6 @@
 {
   "name": "docker-sense-go",
-  "version": "0.14.3",
+  "version": "0.14.4",
   "description": "Docker image to run sense-go.",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/stefanwalther/docker-sense-go#readme",
   "devDependencies": {
-    "sense-go": "^0.14.3"
+    "sense-go": "^0.14.4"
   }
 }
