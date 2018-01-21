@@ -22,6 +22,9 @@ RUN apk add bash
 
 WORKDIR /opt/sense-go
 
+# Enables colored output
+ENV FORCE_COLOR=true
+
 # OK, here we have to copy the symbolic link
 # use npm config get prefix to get the node.js prefix https://stackoverflow.com/questions/18383476/how-to-get-the-npm-global-path-prefix
 
