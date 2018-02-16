@@ -5,7 +5,6 @@
 	"type" : "visualization",
 	"version": "@@pkg.version",
 	"preview" : "preview.png",
-	"author": "@@pkg.author.name",
 	"homepage": "",
   "keywords": "qlik-sense, visualization-extension, extension, visualization",
   "license": "mit",
