@@ -6,9 +6,9 @@ help: ## Call the help
 	@echo ''
 .PHONY: help
 
-d-build: ## Build the container
+build: ## Build the container
 	docker build --no-cache --force-rm -t stefanwalther/sense-go .
-.PHONY: d-build
+.PHONY: build
 
 gen-readme: ## Generate the README.md (using docker-verb)
 	docker run --rm -v ${PWD}:/opt/verb stefanwalther/verb

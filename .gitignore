@@ -4,3 +4,4 @@ build
 
 node_modules
 test/fixtures/basic/.tmp
+package-lock.json
