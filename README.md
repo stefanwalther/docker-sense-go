@@ -1,6 +1,6 @@
 # docker-sense-go
 
-[![CircleCI](https://img.shields.io/circleci/project/github/stefanwalther/docker-sense-go.svg)](https://circleci.com/gh/stefanwalther/docker-sense-go/tree/master)
+[![CircleCI](https://img.shields.io/circleci/project/github/stefanwalther/docker-sense-go.svg?logo=circleci)](https://circleci.com/gh/stefanwalther/docker-sense-go/tree/master)
 
 > Docker image to run sense-go.
 
