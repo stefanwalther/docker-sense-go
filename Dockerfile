@@ -14,7 +14,7 @@ RUN echo "Installing sense-go version $SENSE_GO_VERSION"
 
 WORKDIR /opt/sense-go
 
-RUN npm install --quiet sense-go@$SENSE_GO_VERSION -g
+RUN npm install sense-go@$SENSE_GO_VERSION -g
 
 # -------------------------------------------------------------------
 #                                RELEASE
