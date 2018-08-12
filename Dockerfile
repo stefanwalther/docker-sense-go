@@ -6,15 +6,19 @@
 FROM node:8.11.3@sha256:04986974434fc565529feaac1d62cce4f9fe99ba4906f076ce498000120a45d4 as BASE
 MAINTAINER Stefan Walther <swr-nixda@gmail.com>
 
-ARG SENSE_GO_VERSION="0.14.11"
+COPY package.json .
+RUN node -p -e "require('./package.json').devDependencies['sense-go']" > /root/sense-go-version
+RUN SENSE_GO_VERSION=$(cat /root/sense-go-version)
+
+RUN echo "Installing sense-go version $SENSE_GO_VERSION"
 
 WORKDIR /opt/sense-go
 
 RUN npm install --quiet sense-go@$SENSE_GO_VERSION -g
 
-## -------------------------------------------------------------------
-##                                RELEASE
-## -------------------------------------------------------------------
+# -------------------------------------------------------------------
+#                                RELEASE
+# -------------------------------------------------------------------
 FROM node:8.11.3-alpine@sha256:13f928a8b00ed6f10c1e3964da555e7324d327e2ec0c2202be8b72206625573c as RELEASE
 
 RUN apk update

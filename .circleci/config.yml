@@ -25,12 +25,11 @@ jobs:
           command: |
             ./test/test.sh
       - run:
-          name: Tag image
-          command: |
-            # Only branch "master" is being marked as latest
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              docker tag $DOCKER_REPO:$VER $DOCKER_REPO:latest
-            fi
+          name: Save version of sense-go
+          command: node -p -e "require('./package.json').devDependencies['sense-go']" > /root/sense-go-version
+      - run:
+          name: Get version of sense-go
+          command: echo $(cat /root/sense-go-version)
       - run:
           name: Login to Docker
           command: docker login -u "$DOCKER_USER" -p "$DOCKER_PASS"
@@ -39,6 +38,8 @@ jobs:
           command: |
             # Do not push branches to Docker Hub
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker tag $DOCKER_REPO:$VER $DOCKER_REPO:latest
+              docker tag $DOCKER_REPO:$VER $DOCKER_REPO:$(cat /root/sense-go-version)
               echo Pushing image to docker "$DOCKER_REPO":"$VER"
               docker push $DOCKER_REPO
             fi
