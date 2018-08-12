@@ -12,6 +12,14 @@
 $ docker pull stefanwalther/sense-go
 ```
 
+or use a specific version
+
+```sh
+$ docker pull stefanwalther/sense-go:0.14.11
+```
+
+The available versions are listed [here](https://hub.docker.com/r/stefanwalther/sense-go/tags/) 
+
 ## Run
 
 ```sh
