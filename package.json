@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/stefanwalther/docker-sense-go#readme",
   "devDependencies": {
-    "sense-go": "0.14.16"
+    "sense-go": "0.14.17"
   }
 }
