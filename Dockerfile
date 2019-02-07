@@ -3,7 +3,7 @@
 # -------------------------------------------------------------------
 # We need full node as we need git to download from some GitHub repos.
 # -------------------------------------------------------------------
-FROM node:8.11.4@sha256:cd8ebd022c01f519eb58a98fcbb05c1d1195ac356ef01851036671ec9e9d5580 as BASE
+FROM node:8.15.0@sha256:a8a9d8eaab36bbd188612375a54fb7f57418458812dabd50769ddd3598bc24fc as BASE
 MAINTAINER Stefan Walther <swr-nixda@gmail.com>
 
 COPY package.json .
@@ -19,7 +19,7 @@ RUN npm install sense-go@$SENSE_GO_VERSION -g
 # -------------------------------------------------------------------
 #                                RELEASE
 # -------------------------------------------------------------------
-FROM node:8.11.4-alpine@sha256:cf4ea9156ef964eaf0c4df65da3f4fed7358dbe31149ca105c7684a5858195d8 as RELEASE
+FROM node:8.15.0-alpine@sha256:812e5a88e7dc8e8d9011f18a864d2fd7da4d85b6d77c545b71a73b13c1f4993e as RELEASE
 
 RUN apk update
 RUN apk add bash
