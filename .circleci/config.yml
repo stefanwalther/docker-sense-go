@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:8.15.0@sha256:a8a9d8eaab36bbd188612375a54fb7f57418458812dabd50769ddd3598bc24fc
+      - image: node:8.16.1@sha256:c1c738e90e6c1f1f44043be5d0e77f1f16253b50ec4d98ab0f887fca72820a95
     working_directory: ~/app
     environment:
       DOCKER_REPO: stefanwalther/sense-go
