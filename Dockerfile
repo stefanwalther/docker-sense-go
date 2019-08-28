@@ -19,7 +19,7 @@ RUN npm install sense-go@$SENSE_GO_VERSION -g
 # -------------------------------------------------------------------
 #                                RELEASE
 # -------------------------------------------------------------------
-FROM node:8.16.1-alpine@sha256:e1d58a32a7303b3f95f64fe13f2c6679e42879f02a2b77e06771a023e7706e02 as RELEASE
+FROM node:8.16.1-alpine@sha256:4201be67ca08fbd095790ea514766ec96ef1debd73b9858922d47862ccd242e2 as RELEASE
 
 RUN apk update
 RUN apk add bash
